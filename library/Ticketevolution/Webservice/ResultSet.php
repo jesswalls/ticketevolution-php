@@ -72,11 +72,12 @@ class Ticketevolution_Webservice_ResultSet implements SeekableIterator, Countabl
         // There will only be one
         foreach($result as $property => $val) {
             //dump($val);
+            krumo($property);
             if(is_array($val)) {
                 //dump($val);
                 $this->_results =  $val;
                 //dump($this->_results);
-                if($property == 'results') {
+                if($property == 'results' || 'accounts') {
                     $this->_resultSetType = 'Searchresults';
                 } else {
                     // Remove trailing 'ies' from this property name (for Categories)
